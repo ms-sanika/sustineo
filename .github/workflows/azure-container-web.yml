@@ -80,7 +80,7 @@ jobs:
                             --registry-server ${{ secrets.REGISTRY_ENDPOINT }} \
                             --registry-username ${{ secrets.REGISTRY_USERNAME }} \
                             --registry-password ${{ secrets.REGISTRY_PASSWORD }} \
-                            --environment  zava-dev-env \
+                            --environment  zava-dev-cae \
                             --env-vars "APP_VERSION=${TAG}"
 
         az containerapp update --name $ROOT_NAME-web \
