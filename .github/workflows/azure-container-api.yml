@@ -56,14 +56,7 @@ jobs:
                               --registry-username ${{ secrets.REGISTRY_USERNAME }} \
                               --registry-password ${{ secrets.REGISTRY_PASSWORD }} \
                               --environment zava-dev-cae \
-                              --workload-profile-name heavy-workload \
-                              --env-vars "APP_VERSION=${TAG}" \
-                                "AZURE_OPENAI_ENDPOINT=secretref:azure-openai-endpoint" \
-                                "AZURE_OPENAI_API_KEY=secretref:azure-openai-api-key" \
-                                "COSMOSDB_CONNECTION=secretref:cosmosdb-connection" \
-                                "FOUNDRY_CONNECTION=secretref:foundry-connection" \
-                                "BASE_URL=secretref:base-url" \
-                                "LOCAL_TRACING_ENABLED=false"
+                              --workload-profile-name heavy-workload
 
       - name: Logout
         run: |
