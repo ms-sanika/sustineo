@@ -59,12 +59,6 @@ jobs:
                               --env-vars "APP_VERSION=${TAG}" \
                                 "AZURE_OPENAI_ENDPOINT=secretref:azure-openai-endpoint" \
                                 "AZURE_OPENAI_API_KEY=secretref:azure-openai-api-key" \
-                                "COSMOSDB_CONNECTION=secretref:cosmosdb-connection" \
-                                "FOUNDRY_CONNECTION=secretref:foundry-connection" \
-                                "BASE_URL=secretref:base-url" \
-                                "LOCAL_TRACING_ENABLED=false" \
-                                "AZURE_OPENAI_ENDPOINT=secretref:azure-openai-endpoint" \
-                                "AZURE_OPENAI_API_KEY=secretref:azure-openai-api-key" \
                                 "AZURE_VOICE_ENDPOINT=secretref:azure-voice-endpoint" \
                                 "AZURE_VOICE_KEY=secretref:azure-voice-key" \
                                 "APPINSIGHTS_CONNECTIONSTRING=secretref:appinsights-connectionstring" \
