@@ -15,7 +15,6 @@ types-aiofiles
 mypy
 azure-ai-projects==1.0.0b10
 azure-identity
-azure-ai-agent
 prompty[azure]==1.0.0a1
 azure-storage-blob
 pytest>=7.0.0
