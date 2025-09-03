@@ -24,7 +24,7 @@ export class DesignConfiguration {
   }
 
   async fetchDesigns(): Promise<Design[]> {
-    const response = await fetch(`${this.endpoint}/api/design`);
+    const response = await fetch(`${this.endpoint}/api/design/`);
     if (!response.ok) {
       throw new Error("Failed to fetch designs");
     }
@@ -42,7 +42,7 @@ export class DesignConfiguration {
 
   async createDesign(design: Design): Promise<Design> {
     console.log("Creating design", design);
-    const response = await fetch(`${this.endpoint}/api/design`, {
+    const response = await fetch(`${this.endpoint}/api/design/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
