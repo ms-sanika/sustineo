@@ -15,15 +15,15 @@ from api.agent.common import execute_foundry_agent, post_request
 from typing import Annotated
 import uuid
 import tweepy
-from api.agent.storage import get_storage_client
+# Removed unused import: get_storage_client
 import requests                 # ← keep, still used for the image GET
 
 # Twitter Auth (use environment variables for secrets)
-TW_API_KEY = os.environ.get("TW_API_KEY", "")
-TW_API_SECRET = os.environ.get("TW_API_SECRET", "")
-TW_ACCESS_TOKEN = os.environ.get("TW_ACCESS_TOKEN", "")
-TW_ACCESS_TOKEN_SECRET = os.environ.get("TW_ACCESS_TOKEN_SECRET", "")
-TW_BEARER_TOKEN = os.environ.get("TW_BEARER_TOKEN", "")
+# TW_API_KEY = os.environ.get("TW_API_KEY", "")
+# TW_API_SECRET = os.environ.get("TW_API_SECRET", "")
+# TW_ACCESS_TOKEN = os.environ.get("TW_ACCESS_TOKEN", "")
+# TW_ACCESS_TOKEN_SECRET = os.environ.get("TW_ACCESS_TOKEN_SECRET", "")
+# TW_BEARER_TOKEN = os.environ.get("TW_BEARER_TOKEN", "")
 
 
 AZURE_IMAGE_ENDPOINT = os.environ.get("AZURE_IMAGE_ENDPOINT", "EMPTY").rstrip("/")
