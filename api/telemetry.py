@@ -4,12 +4,16 @@ import logging
 import contextlib
 from pathlib import Path
 from typing import Union
+from dotenv import load_dotenv
 from prompty.tracer import Tracer, PromptyTracer
 from opentelemetry import trace as oteltrace
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from azure.monitor.opentelemetry.exporter import AzureMonitorTraceExporter
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
+
+# Load environment variables from .env file
+load_dotenv()
 
 base_path = Path(__file__).resolve().parent
 _tracer = "prompty"
@@ -80,6 +84,13 @@ def init_tracing(local_tracing: bool = True):
 
         # Configure Azure Monitor as the Exporter
         app_insights = os.getenv("APPINSIGHTS_CONNECTIONSTRING")
+        
+        if not app_insights:
+            raise ValueError(
+                "APPINSIGHTS_CONNECTIONSTRING environment variable is not set. "
+                "Please set it in your .env file or environment variables. "
+                "For development, you can also set LOCAL_TRACING_ENABLED=true to use local tracing instead."
+            )
 
         # Add the Azure exporter to the tracer provider
         resource = Resource(attributes={SERVICE_NAME: "sustineo"})

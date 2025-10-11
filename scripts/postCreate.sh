@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # set working directory to the root of the repository
-cd "/workspaces/buildevents"
+#cd "/workspaces/buildevents"
+#cd "/workspaces/sustineo"
 
 # Create and activate virtual environment for the API
 cd api
